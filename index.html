@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生成AI・AGI時代の学術出版 | AI4PUB2026</title>
+  <meta name="description" content="生成AI・AGI時代の学術出版 〜著者がAI、編集部もAI、の世界を議論する〜 2026年3月6日（金）大阪大学 産業科学研究所">
+  <meta property="og:title" content="生成AI・AGI時代の学術出版 | AI4PUB2026">
+  <meta property="og:description" content="著者がAI、編集部もAI、の世界を議論する 2026年3月6日（金）大阪大学 産業科学研究所">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="noindex, nofollow">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            matrix: {
+              dark: '#0a0a0a',
+              darker: '#050505',
+              green: '#00ff41',
+              greenDark: '#00cc33',
+              greenGlow: '#00ff4180',
+            }
+          },
+          fontFamily: {
+            sans: ['Noto Sans JP', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Matrix Rain Animation */
+    .matrix-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+      background: #0a0a0a;
+    }
+
+    .matrix-rain {
+      position: absolute;
+      top: -100%;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: #00ff41;
+      text-shadow: 0 0 8px #00ff41;
+      animation: fall linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(200vh);
+        opacity: 0.3;
+      }
+    }
+
+    /* Glow Effects */
+    .glow-text {
+      text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41;
+    }
+
+    .glow-border {
+      box-shadow: 0 0 10px #00ff4140, inset 0 0 10px #00ff4120;
+    }
+
+    .glow-line {
+      box-shadow: 0 0 10px #00ff41, 0 0 20px #00ff4180;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0a0a0a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #00ff41;
+      border-radius: 4px;
+    }
+
+    /* Speaker Card Hover */
+    .speaker-card {
+      transition: all 0.3s ease;
+    }
+
+    .speaker-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px #00ff4140;
+    }
+
+    /* Timeline */
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -21px;
+      top: 8px;
+      width: 10px;
+      height: 10px;
+      background: #00ff41;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #00ff41;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: -17px;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, #00ff41, #00ff4140);
+    }
+
+    /* Button Animation */
+    .btn-matrix {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .btn-matrix::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, #00ff4140, transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-matrix:hover::before {
+      left: 100%;
+    }
+
+    .btn-matrix:hover {
+      box-shadow: 0 0 20px #00ff41, 0 0 40px #00ff4180;
+    }
+
+    /* Section Divider */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #00ff41, transparent);
+    }
+
+    /* Keynote Badge */
+    .keynote-badge {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% {
+        box-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41;
+      }
+      50% {
+        box-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41, 0 0 30px #00ff41;
+      }
+    }
+
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Fixed CTA Button */
+    .fixed-cta {
+      animation: slide-up 0.5s ease-out;
+    }
+
+    @keyframes slide-up {
+      from {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body class="bg-matrix-dark text-gray-100 font-sans">
+  <!-- Matrix Rain Background -->
+  <div class="matrix-bg" id="matrixBg"></div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-matrix-darker/90 backdrop-blur-sm border-b border-matrix-green/20">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="font-mono text-matrix-green text-lg font-bold">#AI4PUB2026</a>
+      <div class="hidden md:flex space-x-6 text-sm">
+        <a href="#overview" class="text-gray-400 hover:text-matrix-green transition-colors">概要</a>
+        <a href="#program" class="text-gray-400 hover:text-matrix-green transition-colors">プログラム</a>
+        <a href="#speakers" class="text-gray-400 hover:text-matrix-green transition-colors">登壇者</a>
+        <a href="#fee" class="text-gray-400 hover:text-matrix-green transition-colors">参加費</a>
+        <a href="#access" class="text-gray-400 hover:text-matrix-green transition-colors">アクセス</a>
+      </div>
+      <a href="#register" class="btn-matrix bg-matrix-green text-matrix-dark px-4 py-2 rounded font-bold text-sm">参加登録</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="min-h-screen flex items-center justify-center relative pt-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="font-mono text-matrix-green mb-4 tracking-widest text-sm md:text-base">
+        <span class="opacity-60">&gt;</span> SYMPOSIUM_2026.03.06
+      </p>
+      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        <span class="glow-text text-matrix-green">生成AI・AGI時代の</span><br>
+        <span class="text-white">学術出版</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-400 mb-8 font-mono">
+        〜著者がAI、編集部もAI、の世界を議論する〜
+      </p>
+
+      <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 text-sm md:text-base mb-12">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-matrix-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+          <span>2026年3月6日（金）13:00-17:00</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-matrix-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+          <span>大阪大学 産業科学研究所</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#register" class="btn-matrix bg-matrix-green text-matrix-dark px-8 py-4 rounded-lg font-bold text-lg inline-block">
+          参加登録（無料）
+        </a>
+        <a href="#program" class="border border-matrix-green text-matrix-green px-8 py-4 rounded-lg font-bold text-lg inline-block hover:bg-matrix-green/10 transition-colors">
+          プログラムを見る
+        </a>
+      </div>
+
+      <div class="mt-12 flex justify-center gap-4 text-sm">
+        <span class="bg-matrix-green/20 text-matrix-green px-3 py-1 rounded-full border border-matrix-green/40">
+          ハイブリッド開催
+        </span>
+        <span class="bg-matrix-green/20 text-matrix-green px-3 py-1 rounded-full border border-matrix-green/40">
+          現地定員238名
+        </span>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-matrix-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- Overview Section -->
+  <section id="overview" class="py-20 relative">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <p class="font-mono text-matrix-green text-sm mb-2">&gt; OVERVIEW</p>
+        <h2 class="text-3xl md:text-4xl font-bold">概要</h2>
+      </div>
+
+      <div class="bg-matrix-darker/80 border border-matrix-green/30 rounded-lg p-6 md:p-10 glow-border">
+        <div class="font-mono text-matrix-green/60 text-sm mb-4">$ cat symposium_overview.txt</div>
+        <p class="text-lg md:text-xl leading-relaxed text-gray-300">
+          生成AIやAIエージェントの急速な発展により、学術出版のあり方が大きく変わろうとしています。
+        </p>
+        <p class="text-lg md:text-xl leading-relaxed text-gray-300 mt-4">
+          著者がAI、編集部もAIという未来において、研究者と出版社はどのような役割を担うべきでしょうか？
+        </p>
+        <p class="text-lg md:text-xl leading-relaxed text-gray-300 mt-4">
+          本シンポジウムでは、AI時代の学術出版の課題と可能性について、第一線の研究者とともに議論します。
+        </p>
+        <div class="font-mono text-matrix-green/60 text-sm mt-6">_</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-4xl mx-auto"></div>
+
+  <!-- Program Section -->
+  <section id="program" class="py-20 relative">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <p class="font-mono text-matrix-green text-sm mb-2">&gt; PROGRAM</p>
+        <h2 class="text-3xl md:text-4xl font-bold">プログラム</h2>
+      </div>
+
+      <div class="relative pl-8 md:pl-12">
+        <div class="timeline-line"></div>
+
+        <!-- 受付 -->
+        <div class="timeline-item relative mb-8">
+          <div class="flex flex-col md:flex-row md:items-start gap-2 md:gap-6">
+            <div class="font-mono text-matrix-green text-sm md:text-base w-32 flex-shrink-0">12:30-13:00</div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-200">受付</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- 開会 -->
+        <div class="timeline-item relative mb-8">
+          <div class="flex flex-col md:flex-row md:items-start gap-2 md:gap-6">
+            <div class="font-mono text-matrix-green text-sm md:text-base w-32 flex-shrink-0">13:00-13:10</div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-200">開会・主旨説明</h3>
+              <p class="text-gray-400 mt-1">永井 健治（大阪大学 産業科学研究所）</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SESSION 1 Header -->
+        <div class="mb-6 bg-matrix-green/10 border border-matrix-green/30 rounded-lg p-4">
+          <p class="font-mono text-matrix-green font-bold">[SESSION 1] AI for publicationに向けた現状と課題</p>
+        </div>
+
+        <!-- 講演1 -->
+        <div class="timeline-item relative mb-8">
+          <div class="flex flex-col md:flex-row md:items-start gap-2 md:gap-6">
+            <div class="font-mono text-matrix-green text-sm md:text-base w-32 flex-shrink-0">13:10-13:35</div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-200">AI・ロボットによる生命科学研究の自動化の現状と課題</h3>
+              <p class="text-gray-400 mt-1">神田 元紀（東京科学大学）</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 講演2 -->
+        <div class="timeline-item relative mb-8">
+          <div class="flex flex-col md:flex-row md:items-start gap-2 md:gap-6">
+            <div class="font-mono text-matrix-green text-sm md:text-base w-32 flex-shrink-0">13:35-13:55</div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-200">Biophysics and Physicobiology誌におけるAI対応の現状と課題</h3>
+              <p class="text-gray-400 mt-1">中村 春木（大阪大学）</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- KEYNOTE -->
+        <div class="timeline-item relative mb-8">
+          <div class="flex flex-col md:flex-row md:items-start gap-2 md:gap-6">
+            <div class="font-mono text-matrix-green text-sm md:text-base w-32 flex-shrink-0">13:55-14:40</div>
+            <div class="flex-1">
+              <div class="bg-matrix-darker border-2 border-matrix-green rounded-lg p-4 glow-border">
+                <span class="keynote-badge inline-block bg-matrix-green text-matrix-dark text-xs font-bold px-2 py-1 rounded mb-2">KEYNOTE</span>
+                <h3 class="text-xl font-bold text-matrix-green">基調講演</h3>
+                <p class="text-gray-300 mt-2">夏目 徹（産業技術総合研究所）</p>
+                <p class="text-gray-500 text-sm mt-1">汎用人型ロボットLabDroid「まほろ」開発者</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 休憩1 -->
+        <div class="timeline-item relative mb-8 opacity-60">
+          <div class="flex flex-col md:flex-row md:items-start gap-2 md:gap-6">
+            <div class="font-mono text-matrix-green text-sm md:text-base w-32 flex-shrink-0">14:40-14:55</div>
+            <div>
+              <h3 class="text-lg text-gray-400">休憩</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- SESSION 2 Header -->
+        <div class="mb-6 bg-matrix-green/10 border border-matrix-green/30 rounded-lg p-4">
+          <p class="font-mono text-matrix-green font-bold">[SESSION 2] AI for publicationに向けた研究開発の動向</p>
+        </div>
+
+        <!-- 講演3 -->
+        <div class="timeline-item relative mb-8">
+          <div class="flex flex-col md:flex-row md:items-start gap-2 md:gap-6">
+            <div class="font-mono text-matrix-green text-sm md:text-base w-32 flex-shrink-0">14:55-15:15</div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-200">AI for Scienceが研究の「出口」をどう変えるか</h3>
+              <p class="text-gray-400 mt-1">尾崎 遼（理化学研究所）</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 講演4 -->
+        <div class="timeline-item relative mb-8">
+          <div class="flex flex-col md:flex-row md:items-start gap-2 md:gap-6">
+            <div class="font-mono text-matrix-green text-sm md:text-base w-32 flex-shrink-0">15:15-15:35</div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-200">AI Agentの現状と方向性</h3>
+              <p class="text-gray-400 mt-1">山田 涼太（Science Aid株式会社）</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 講演5 -->
+        <div class="timeline-item relative mb-8">
+          <div class="flex flex-col md:flex-row md:items-start gap-2 md:gap-6">
+            <div class="font-mono text-matrix-green text-sm md:text-base w-32 flex-shrink-0">15:35-15:55</div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-200">講演（演者調整中）</h3>
+              <p class="text-gray-400 mt-1">TBA</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 休憩2 -->
+        <div class="timeline-item relative mb-8 opacity-60">
+          <div class="flex flex-col md:flex-row md:items-start gap-2 md:gap-6">
+            <div class="font-mono text-matrix-green text-sm md:text-base w-32 flex-shrink-0">15:55-16:00</div>
+            <div>
+              <h3 class="text-lg text-gray-400">休憩</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- SESSION 3 Header -->
+        <div class="mb-6 bg-matrix-green/10 border border-matrix-green/30 rounded-lg p-4">
+          <p class="font-mono text-matrix-green font-bold">[SESSION 3] パネルディスカッション</p>
+        </div>
+
+        <!-- パネルディスカッション -->
+        <div class="timeline-item relative mb-8">
+          <div class="flex flex-col md:flex-row md:items-start gap-2 md:gap-6">
+            <div class="font-mono text-matrix-green text-sm md:text-base w-32 flex-shrink-0">16:00-16:55</div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-200">生成AI・AGI時代の学術出版のあり方</h3>
+              <p class="text-gray-400 mt-1">モデレーター: 冨樫 祐一（立命館大学）</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 閉会 -->
+        <div class="timeline-item relative mb-8">
+          <div class="flex flex-col md:flex-row md:items-start gap-2 md:gap-6">
+            <div class="font-mono text-matrix-green text-sm md:text-base w-32 flex-shrink-0">16:55-17:00</div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-200">閉会</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- 交流会 -->
+        <div class="timeline-item relative">
+          <div class="flex flex-col md:flex-row md:items-start gap-2 md:gap-6">
+            <div class="font-mono text-matrix-green text-sm md:text-base w-32 flex-shrink-0">17:30〜</div>
+            <div>
+              <h3 class="text-lg font-bold text-gray-200">交流会</h3>
+              <p class="text-gray-400 mt-1">希望者のみ / 会場: SANKEN CReA（管理棟2階）</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-4xl mx-auto"></div>
+
+  <!-- Speakers Section -->
+  <section id="speakers" class="py-20 relative">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <p class="font-mono text-matrix-green text-sm mb-2">&gt; SPEAKERS</p>
+        <h2 class="text-3xl md:text-4xl font-bold">登壇者</h2>
+      </div>
+
+      <!-- Keynote Speaker -->
+      <div class="mb-12">
+        <h3 class="text-center font-mono text-matrix-green mb-6">// KEYNOTE SPEAKER</h3>
+        <div class="max-w-2xl mx-auto">
+          <div class="speaker-card bg-matrix-darker border-2 border-matrix-green rounded-lg p-6 glow-border">
+            <div class="flex flex-col md:flex-row gap-6">
+              <div class="w-32 h-32 mx-auto md:mx-0 bg-matrix-green/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="font-mono text-matrix-green text-4xl">夏</span>
+              </div>
+              <div class="flex-1 text-center md:text-left">
+                <span class="keynote-badge inline-block bg-matrix-green text-matrix-dark text-xs font-bold px-2 py-1 rounded mb-2">KEYNOTE</span>
+                <h4 class="text-xl font-bold text-matrix-green">夏目 徹</h4>
+                <p class="text-gray-400 mt-1">産業技術総合研究所 首席研究員</p>
+                <p class="text-gray-500 text-sm">ロボティック・バイオロジー・インスティテュート株式会社 取締役CSO</p>
+                <p class="text-gray-300 text-sm mt-3">汎用人型ロボットLabDroid「まほろ」の開発者</p>
+                <div class="flex flex-wrap gap-2 mt-3 justify-center md:justify-start">
+                  <span class="text-xs bg-matrix-green/20 text-matrix-green px-2 py-1 rounded">まほろ</span>
+                  <span class="text-xs bg-matrix-green/20 text-matrix-green px-2 py-1 rounded">自動化</span>
+                  <span class="text-xs bg-matrix-green/20 text-matrix-green px-2 py-1 rounded">プロテオミクス</span>
+                </div>
+                <div class="flex gap-3 mt-4 justify-center md:justify-start">
+                  <a href="https://researchmap.jp/t_natsume" target="_blank" rel="noopener" class="text-gray-400 hover:text-matrix-green transition-colors">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.523 0-10-4.477-10-10S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-15h2v6h-2zm0 8h2v2h-2z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Speakers -->
+      <h3 class="text-center font-mono text-matrix-green mb-6">// SPEAKERS</h3>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 神田 元紀 -->
+        <div class="speaker-card bg-matrix-darker border border-matrix-green/30 rounded-lg p-6">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-24 h-24 bg-matrix-green/20 rounded-lg flex items-center justify-center mb-4">
+              <span class="font-mono text-matrix-green text-3xl">神</span>
+            </div>
+            <h4 class="text-lg font-bold text-gray-200">神田 元紀</h4>
+            <p class="text-gray-400 text-sm mt-1">東京科学大学 難治疾患研究所 教授</p>
+            <p class="text-gray-500 text-xs mt-1">一般社団法人ラボラトリーオートメーション協会 代表理事</p>
+            <div class="flex flex-wrap gap-1 mt-3 justify-center">
+              <span class="text-xs bg-matrix-green/10 text-matrix-green/80 px-2 py-0.5 rounded">ラボラトリーオートメーション</span>
+              <span class="text-xs bg-matrix-green/10 text-matrix-green/80 px-2 py-0.5 rounded">再生医療</span>
+            </div>
+            <div class="flex gap-3 mt-4">
+              <a href="https://twitter.com/Kd_Gn" target="_blank" rel="noopener" class="text-gray-400 hover:text-matrix-green transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="https://researchmap.jp/kdgn" target="_blank" rel="noopener" class="text-gray-400 hover:text-matrix-green transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.523 0-10-4.477-10-10S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-15h2v6h-2zm0 8h2v2h-2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 中村 春木 -->
+        <div class="speaker-card bg-matrix-darker border border-matrix-green/30 rounded-lg p-6">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-24 h-24 bg-matrix-green/20 rounded-lg flex items-center justify-center mb-4">
+              <span class="font-mono text-matrix-green text-3xl">中</span>
+            </div>
+            <h4 class="text-lg font-bold text-gray-200">中村 春木</h4>
+            <p class="text-gray-400 text-sm mt-1">大阪大学 名誉教授</p>
+            <p class="text-gray-500 text-xs mt-1">Biophysics and Physicobiology誌 編集委員長</p>
+            <div class="flex flex-wrap gap-1 mt-3 justify-center">
+              <span class="text-xs bg-matrix-green/10 text-matrix-green/80 px-2 py-0.5 rounded">生物物理学</span>
+              <span class="text-xs bg-matrix-green/10 text-matrix-green/80 px-2 py-0.5 rounded">蛋白質科学</span>
+            </div>
+            <div class="flex gap-3 mt-4">
+              <a href="https://researchmap.jp/read0191257" target="_blank" rel="noopener" class="text-gray-400 hover:text-matrix-green transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.523 0-10-4.477-10-10S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-15h2v6h-2zm0 8h2v2h-2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 永井 健治 -->
+        <div class="speaker-card bg-matrix-darker border border-matrix-green/30 rounded-lg p-6">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-24 h-24 bg-matrix-green/20 rounded-lg flex items-center justify-center mb-4">
+              <span class="font-mono text-matrix-green text-3xl">永</span>
+            </div>
+            <h4 class="text-lg font-bold text-gray-200">永井 健治</h4>
+            <p class="text-gray-400 text-sm mt-1">大阪大学 産業科学研究所 教授</p>
+            <p class="text-gray-500 text-xs mt-1">日本生物物理学会 代表理事・会長</p>
+            <div class="flex flex-wrap gap-1 mt-3 justify-center">
+              <span class="text-xs bg-matrix-green/10 text-matrix-green/80 px-2 py-0.5 rounded">蛍光タンパク質</span>
+              <span class="text-xs bg-matrix-green/10 text-matrix-green/80 px-2 py-0.5 rounded">バイオイメージング</span>
+            </div>
+            <div class="flex gap-3 mt-4">
+              <a href="https://twitter.com/Lab_Nagai" target="_blank" rel="noopener" class="text-gray-400 hover:text-matrix-green transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="https://researchmap.jp/ng1" target="_blank" rel="noopener" class="text-gray-400 hover:text-matrix-green transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.523 0-10-4.477-10-10S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-15h2v6h-2zm0 8h2v2h-2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 尾崎 遼 -->
+        <div class="speaker-card bg-matrix-darker border border-matrix-green/30 rounded-lg p-6">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-24 h-24 bg-matrix-green/20 rounded-lg flex items-center justify-center mb-4">
+              <span class="font-mono text-matrix-green text-3xl">尾</span>
+            </div>
+            <h4 class="text-lg font-bold text-gray-200">尾崎 遼</h4>
+            <p class="text-gray-400 text-sm mt-1">理化学研究所 チームディレクター</p>
+            <p class="text-gray-500 text-xs mt-1">生命機能科学研究センター AI生物学研究チーム</p>
+            <div class="flex flex-wrap gap-1 mt-3 justify-center">
+              <span class="text-xs bg-matrix-green/10 text-matrix-green/80 px-2 py-0.5 rounded">AIエージェント</span>
+              <span class="text-xs bg-matrix-green/10 text-matrix-green/80 px-2 py-0.5 rounded">研究自動化</span>
+            </div>
+            <div class="flex gap-3 mt-4">
+              <a href="https://twitter.com/yuifu" target="_blank" rel="noopener" class="text-gray-400 hover:text-matrix-green transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="https://researchmap.jp/harukao" target="_blank" rel="noopener" class="text-gray-400 hover:text-matrix-green transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.523 0-10-4.477-10-10S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-15h2v6h-2zm0 8h2v2h-2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 山田 涼太 -->
+        <div class="speaker-card bg-matrix-darker border border-matrix-green/30 rounded-lg p-6">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-24 h-24 bg-matrix-green/20 rounded-lg flex items-center justify-center mb-4">
+              <span class="font-mono text-matrix-green text-3xl">山</span>
+            </div>
+            <h4 class="text-lg font-bold text-gray-200">山田 涼太</h4>
+            <p class="text-gray-400 text-sm mt-1">Science Aid株式会社 代表取締役 CEO</p>
+            <div class="flex flex-wrap gap-1 mt-3 justify-center">
+              <span class="text-xs bg-matrix-green/10 text-matrix-green/80 px-2 py-0.5 rounded">AI for Science</span>
+              <span class="text-xs bg-matrix-green/10 text-matrix-green/80 px-2 py-0.5 rounded">生成AI</span>
+              <span class="text-xs bg-matrix-green/10 text-matrix-green/80 px-2 py-0.5 rounded">AIエージェント</span>
+            </div>
+            <div class="flex gap-3 mt-4">
+              <a href="https://twitter.com/roy29fuku" target="_blank" rel="noopener" class="text-gray-400 hover:text-matrix-green transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 冨樫 祐一 (モデレーター) -->
+        <div class="speaker-card bg-matrix-darker border border-matrix-green/30 rounded-lg p-6">
+          <div class="flex flex-col items-center text-center">
+            <div class="w-24 h-24 bg-matrix-green/20 rounded-lg flex items-center justify-center mb-4">
+              <span class="font-mono text-matrix-green text-3xl">冨</span>
+            </div>
+            <span class="text-xs bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded mb-2">MODERATOR</span>
+            <h4 class="text-lg font-bold text-gray-200">冨樫 祐一</h4>
+            <p class="text-gray-400 text-sm mt-1">立命館大学 生命科学部 教授</p>
+            <p class="text-gray-500 text-xs mt-1">日本生物物理学会 理事</p>
+            <div class="flex flex-wrap gap-1 mt-3 justify-center">
+              <span class="text-xs bg-matrix-green/10 text-matrix-green/80 px-2 py-0.5 rounded">計算生物物理学</span>
+              <span class="text-xs bg-matrix-green/10 text-matrix-green/80 px-2 py-0.5 rounded">理論生物学</span>
+            </div>
+            <div class="flex gap-3 mt-4">
+              <a href="https://twitter.com/togashi_tv" target="_blank" rel="noopener" class="text-gray-400 hover:text-matrix-green transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="https://researchmap.jp/togashi" target="_blank" rel="noopener" class="text-gray-400 hover:text-matrix-green transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.523 0-10-4.477-10-10S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-15h2v6h-2zm0 8h2v2h-2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-4xl mx-auto"></div>
+
+  <!-- Fee Section -->
+  <section id="fee" class="py-20 relative">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <p class="font-mono text-matrix-green text-sm mb-2">&gt; FEE</p>
+        <h2 class="text-3xl md:text-4xl font-bold">参加費</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- シンポジウム -->
+        <div class="bg-matrix-darker border border-matrix-green/30 rounded-lg p-6 text-center glow-border">
+          <h3 class="font-mono text-matrix-green mb-4">// SYMPOSIUM</h3>
+          <p class="text-4xl font-bold text-matrix-green mb-2">無料</p>
+          <p class="text-gray-400 text-sm">シンポジウム参加</p>
+          <p class="text-gray-500 text-xs mt-2">現地・オンライン共通</p>
+        </div>
+
+        <!-- 交流会 -->
+        <div class="bg-matrix-darker border border-matrix-green/30 rounded-lg p-6 text-center">
+          <h3 class="font-mono text-matrix-green mb-4">// NETWORKING</h3>
+          <div class="space-y-3">
+            <div>
+              <p class="text-3xl font-bold text-white">2,000<span class="text-lg">円</span></p>
+              <p class="text-gray-400 text-sm">一般</p>
+            </div>
+            <div class="border-t border-matrix-green/20 pt-3">
+              <p class="text-3xl font-bold text-white">500<span class="text-lg">円</span></p>
+              <p class="text-gray-400 text-sm">学生</p>
+            </div>
+          </div>
+          <p class="text-gray-500 text-xs mt-4">17:30〜 SANKEN CReA</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-4xl mx-auto"></div>
+
+  <!-- Access Section -->
+  <section id="access" class="py-20 relative">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <p class="font-mono text-matrix-green text-sm mb-2">&gt; ACCESS</p>
+        <h2 class="text-3xl md:text-4xl font-bold">アクセス</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <div class="bg-matrix-darker border border-matrix-green/30 rounded-lg p-6 mb-6">
+            <h3 class="font-mono text-matrix-green mb-4">// VENUE</h3>
+            <p class="text-xl font-bold text-gray-200 mb-2">大阪大学 産業科学研究所</p>
+            <p class="text-gray-400 mb-1">管理棟 1階 講堂</p>
+            <p class="text-gray-500 text-sm">〒567-0047 大阪府茨木市美穂ヶ丘8-1</p>
+          </div>
+
+          <div class="bg-matrix-darker border border-matrix-green/30 rounded-lg p-6">
+            <h3 class="font-mono text-matrix-green mb-4">// TRANSPORT</h3>
+            <ul class="space-y-4 text-gray-300">
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-matrix-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+                <div>
+                  <p class="font-bold">大阪モノレール</p>
+                  <p class="text-sm text-gray-400">「阪大病院前駅」から徒歩15分</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-matrix-green flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+                </svg>
+                <div>
+                  <p class="font-bold">北大阪急行 + 阪急バス</p>
+                  <p class="text-sm text-gray-400">「千里中央駅」から175系統「小野原東」行、「阪大口」下車 徒歩10分</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="h-80 md:h-auto bg-matrix-darker border border-matrix-green/30 rounded-lg overflow-hidden">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3276.8841772483824!2d135.52!3d34.82!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e3e8f7a5ad31%3A0x8f3e0a5e7b8c9d0e!2z5aSn6Ziq5aSn5a2mIOeUo-alreenkeWtpueglOeptuaJgA!5e0!3m2!1sja!2sjp!4v1234567890"
+            width="100%"
+            height="100%"
+            style="border:0; filter: grayscale(100%) invert(92%) hue-rotate(180deg);"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-4xl mx-auto"></div>
+
+  <!-- Register Section -->
+  <section id="register" class="py-20 relative">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="mb-8">
+        <p class="font-mono text-matrix-green text-sm mb-2">&gt; REGISTER</p>
+        <h2 class="text-3xl md:text-4xl font-bold">参加登録</h2>
+      </div>
+
+      <div class="bg-matrix-darker border border-matrix-green rounded-lg p-8 glow-border max-w-xl mx-auto">
+        <p class="text-gray-300 mb-6">
+          本シンポジウムへの参加をご希望の方は、以下のボタンから参加登録をお願いいたします。
+        </p>
+
+        <a href="https://forms.gle/xxxxx" class="btn-matrix bg-matrix-green text-matrix-dark px-10 py-4 rounded-lg font-bold text-lg inline-block mb-4">
+          参加登録フォーム
+        </a>
+
+        <p class="text-gray-500 text-sm">
+          ※ 準備中 - 登録開始までお待ちください
+        </p>
+      </div>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm">
+        <span class="flex items-center gap-2 text-gray-400">
+          <svg class="w-4 h-4 text-matrix-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          開場 12:30
+        </span>
+        <span class="flex items-center gap-2 text-gray-400">
+          <svg class="w-4 h-4 text-matrix-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+          現地定員 238名
+        </span>
+        <span class="flex items-center gap-2 text-gray-400">
+          <svg class="w-4 h-4 text-matrix-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+          </svg>
+          オンライン参加可
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider max-w-4xl mx-auto"></div>
+
+  <!-- Organizers Section -->
+  <section id="organizers" class="py-20 relative">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <p class="font-mono text-matrix-green text-sm mb-2">&gt; ORGANIZERS</p>
+        <h2 class="text-3xl md:text-4xl font-bold">主催・共催</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-matrix-darker border border-matrix-green/30 rounded-lg p-6">
+          <h3 class="font-mono text-matrix-green mb-4 text-sm">// HOST</h3>
+          <ul class="space-y-3 text-gray-300">
+            <li>日本生物物理学会</li>
+            <li>一般社団法人ラボラトリーオートメーション協会（LASA）</li>
+          </ul>
+        </div>
+
+        <div class="bg-matrix-darker border border-matrix-green/30 rounded-lg p-6">
+          <h3 class="font-mono text-matrix-green mb-4 text-sm">// CO-HOST</h3>
+          <ul class="space-y-3 text-gray-300">
+            <li>大阪大学 産業科学研究所</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-6 bg-matrix-darker border border-matrix-green/20 rounded-lg p-6 text-center">
+        <h3 class="font-mono text-matrix-green/60 mb-2 text-sm">// SUPPORT</h3>
+        <p class="text-gray-500">後援: 調整中</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-matrix-green/20">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-center">
+        <p class="font-mono text-matrix-green text-2xl mb-4">#AI4PUB2026</p>
+        <p class="text-gray-400 mb-6">生成AI・AGI時代の学術出版</p>
+
+        <div class="flex justify-center gap-6 mb-8">
+          <a href="https://twitter.com/intent/tweet?text=%E7%94%9F%E6%88%90AI%E3%83%BBAGI%E6%99%82%E4%BB%A3%E3%81%AE%E5%AD%A6%E8%A1%93%E5%87%BA%E7%89%88%20%23AI4PUB2026&url=" target="_blank" rel="noopener" class="text-gray-400 hover:text-matrix-green transition-colors">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+
+        <div class="text-gray-500 text-sm">
+          <p>お問い合わせ: <a href="mailto:info@lasa.or.jp" class="text-matrix-green hover:underline">info@lasa.or.jp</a></p>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-matrix-green/10 text-gray-600 text-xs font-mono">
+          <p>&copy; 2026 日本生物物理学会 / 一般社団法人ラボラトリーオートメーション協会</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Fixed CTA Button (Mobile) -->
+  <div class="fixed bottom-0 left-0 right-0 p-4 bg-matrix-darker/95 backdrop-blur-sm border-t border-matrix-green/20 md:hidden fixed-cta">
+    <a href="#register" class="btn-matrix bg-matrix-green text-matrix-dark px-6 py-3 rounded-lg font-bold text-center block">
+      参加登録（無料）
+    </a>
+  </div>
+
+  <!-- Demo Notice Modal -->
+  <div id="demoModal" class="fixed inset-0 z-[100] flex items-center justify-center p-4">
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeModal()"></div>
+    <div class="relative bg-matrix-darker border-2 border-matrix-green rounded-lg p-6 md:p-8 max-w-md w-full glow-border animate-modal">
+      <div class="text-center">
+        <div class="w-16 h-16 mx-auto mb-4 border-2 border-matrix-green rounded-full flex items-center justify-center">
+          <svg class="w-8 h-8 text-matrix-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <p class="font-mono text-matrix-green text-sm mb-2">// NOTICE</p>
+        <h3 class="text-xl md:text-2xl font-bold text-white mb-4">デモページです</h3>
+        <p class="text-gray-400 mb-6 text-sm md:text-base">
+          このページはブログ記事用のサンプルページです。<br>
+          実際のイベントページではありません。
+        </p>
+        <button onclick="closeModal()" class="btn-matrix bg-matrix-green text-matrix-dark px-8 py-3 rounded-lg font-bold">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @keyframes modal-appear {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    .animate-modal {
+      animation: modal-appear 0.3s ease-out;
+    }
+  </style>
+
+  <script>
+    function closeModal() {
+      document.getElementById('demoModal').style.display = 'none';
+    }
+  </script>
+
+  <!-- Matrix Rain Script -->
+  <script>
+    const matrixBg = document.getElementById('matrixBg');
+    const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ<>{}[]()=+-*/%&|!?#$@';
+    const columnCount = Math.floor(window.innerWidth / 20);
+
+    for (let i = 0; i < columnCount; i++) {
+      createRainColumn(i);
+    }
+
+    function createRainColumn(index) {
+      const column = document.createElement('div');
+      column.className = 'matrix-rain';
+      column.style.left = (index * 20) + 'px';
+      column.style.animationDuration = (Math.random() * 10 + 5) + 's';
+      column.style.animationDelay = (Math.random() * 5) + 's';
+
+      const length = Math.floor(Math.random() * 20) + 10;
+      let text = '';
+      for (let j = 0; j < length; j++) {
+        text += chars[Math.floor(Math.random() * chars.length)] + '<br>';
+      }
+      column.innerHTML = text;
+
+      matrixBg.appendChild(column);
+
+      // Recreate column after animation ends
+      column.addEventListener('animationend', () => {
+        column.remove();
+        createRainColumn(index);
+      });
+    }
+
+    // Navbar scroll effect
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        nav.classList.add('shadow-lg');
+      } else {
+        nav.classList.remove('shadow-lg');
+      }
+    });
+  </script>
+</body>
+</html>
