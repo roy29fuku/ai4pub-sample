@@ -1,6 +1,6 @@
 # AI4PUB 2026 サンプルLP
 
-このリポジトリは、[Science Aid株式会社のブログ記事](https://blog.science-aid.com/)で紹介している「AIを活用した学会ページ作成」のサンプルファイルです。
+このリポジトリは、[Science Aid株式会社のブログ記事](https://blog.science-aid.com/)で紹介している「AIを活用したシンポジウムLP作成」のサンプルファイルです。
 
 ## 概要
 
@@ -9,6 +9,7 @@ Claude Codeに議事録を渡すだけで、約20分で生成されたMatrix風�
 - **技術スタック**: HTML + TailwindCSS (CDN)
 - **特徴**: 単一HTMLファイルで完結（ペライチLP）
 - **デザイン**: 黒背景 + 緑（Matrix風）
+- **プロンプト公開**: [作成に使用したプロンプトテンプレート](https://roy29fuku.github.io/ai4pub-sample/prompt.md)を公開
 
 ## デモ
 
@@ -18,13 +19,10 @@ Claude Codeに議事録を渡すだけで、約20分で生成されたMatrix風�
 
 - これはデモ用のサンプルページです
 - 実際のイベント情報とは異なります
-- 検索エンジンにインデックスされないよう `noindex` を設定しています
 
 ## 関連リンク
 
-- [ブログ記事: AIを活用した学会ページ作成の実践](https://blog.and-and.co.jp/) ※公開後にURL更新
-- [Science Aid株式会社](https://and-and.co.jp/)
-- [LASA（ラボラトリーオートメーション協会）](https://lasa.or.jp/)
+- [Science Aid株式会社](https://scinece-aid.com)
 
 ## ライセンス
 
